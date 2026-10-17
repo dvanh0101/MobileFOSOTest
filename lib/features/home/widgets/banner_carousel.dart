@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import '../../../shared/widgets/app_network_image.dart';
 import '../../../theme/app_colors.dart';
 
 class BannerItem {
@@ -8,6 +9,7 @@ class BannerItem {
   const BannerItem({required this.id, required this.imageUrl});
 }
 
+/// Banner quảng cáo tự chuyển trang + chấm chỉ báo (chấm đang chọn kéo dài).
 class BannerCarousel extends StatefulWidget {
   final List<BannerItem> banners;
   final void Function(BannerItem banner)? onBannerTap;
@@ -88,7 +90,7 @@ class _BannerCarouselState extends State<BannerCarousel> {
                     return GestureDetector(
                       onTap: () => widget.onBannerTap?.call(b),
                       child: SizedBox.expand(
-                        child: buildImage(b.imageUrl, fit: BoxFit.cover),
+                        child: AppNetworkImage(url: b.imageUrl, fit: BoxFit.cover),
                       ),
                     );
                   },

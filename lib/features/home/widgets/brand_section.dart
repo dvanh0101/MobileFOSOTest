@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../theme/app_colors.dart';
+import '../../../shared/widgets/app_network_image.dart';
 import '../../../shared/widgets/section_header.dart';
+import '../../../theme/app_colors.dart';
 
 class BrandItem {
   final String id;
@@ -83,7 +84,7 @@ class _BrandTile extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
             border: Border.all(color: const Color(0xFFEDEEF2)),
           ),
-          child: buildImage(brand.logoUrl, fit: BoxFit.contain),
+          child: AppNetworkImage(url: brand.logoUrl, fit: BoxFit.contain),
         ),
       ),
     );

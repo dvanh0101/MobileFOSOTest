@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' show ValueListenable;
+import '../../../shared/widgets/app_network_image.dart';
 import '../../../theme/app_colors.dart';
 
 class CategoryItem {
@@ -82,24 +83,6 @@ class _CategorySectionState extends State<CategorySection> {
                 onTap: () => widget.onCategoryTap?.call(c),
               );
             },
-    // Padding(
-    // padding: const EdgeInsets.symmetric(horizontal: 12),
-    // child: SizedBox(
-    // height: 104,
-    // child: ListView.separated(
-    // controller: _controller,
-    // scrollDirection: Axis.horizontal,
-    // padding: EdgeInsets.zero,
-    // itemCount: widget.categories.length,
-    // separatorBuilder: (_, __) => const SizedBox(width: 12),
-    // itemBuilder: (_, i) {
-    // final c = widget.categories[i];
-    // return _CategoryTile(
-    // item: c,
-    // onTap: () => widget.onCategoryTap?.call(c),
-    // );
-    // },
-    // ),
           ),
         ),
         const SizedBox(height: 10),
@@ -132,7 +115,7 @@ class _CategoryTile extends StatelessWidget {
           child: Column(
             children: [
               Expanded(
-                child: buildImage(item.imageUrl, fit: BoxFit.contain),
+                child: AppNetworkImage(url: item.imageUrl, fit: BoxFit.contain),
               ),
               const SizedBox(height: 6),
               Text(
@@ -155,7 +138,6 @@ class _CategoryTile extends StatelessWidget {
   }
 }
 
-/// Thanh trượt nhỏ: nền xám, thanh xanh di chuyển theo tiến độ cuộn.
 class _ScrollIndicator extends StatelessWidget {
   final ValueListenable<double> progress;
   const _ScrollIndicator({required this.progress});

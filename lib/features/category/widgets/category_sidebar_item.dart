@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../theme/app_colors.dart';
+import 'package:test_mobile_app_foso/theme/app_colors.dart';
+import '../../../shared/widgets/app_network_image.dart';
 
 class CategorySidebarItem extends StatelessWidget {
   final String name;
@@ -35,7 +36,7 @@ class CategorySidebarItem extends StatelessWidget {
             SizedBox(
               width: 36,
               height: 36,
-              child: buildImage(imageUrl, fit: BoxFit.contain),
+              child: AppNetworkImage(url: imageUrl, fit: BoxFit.contain),
             ),
             const SizedBox(height: 6),
             Text(

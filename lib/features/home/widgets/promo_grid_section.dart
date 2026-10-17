@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../shared/widgets/app_network_image.dart';
 import '../../../theme/app_colors.dart';
 
 class PromoItem {
@@ -79,7 +80,7 @@ class _PromoTile extends StatelessWidget {
       child: GestureDetector(
         onTap: () => onTap?.call(item),
         child: SizedBox.expand(
-          child: buildImage(item.imageUrl, fit: BoxFit.cover),
+          child: AppNetworkImage(url: item.imageUrl, fit: BoxFit.cover),
         ),
       ),
     );

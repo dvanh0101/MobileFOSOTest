@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../shared/widgets/app_network_image.dart';
 import '../../../theme/app_colors.dart';
 
 class SubCategoryItemWidget extends StatelessWidget {
@@ -30,7 +31,7 @@ class SubCategoryItemWidget extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(8),
                 child: SizedBox.expand(
-                  child: buildImage(imageUrl, fit: BoxFit.contain),
+                  child: AppNetworkImage(url: imageUrl, fit: BoxFit.contain),
                 ),
               ),
             ),

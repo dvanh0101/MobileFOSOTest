@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../models/product_item.dart';
 import '../../theme/app_colors.dart';
+import 'app_network_image.dart';
 
 class ArticleTile extends StatelessWidget {
   final ArticleItem article;
@@ -28,7 +29,7 @@ class ArticleTile extends StatelessWidget {
               child: SizedBox(
                 width: imageSize,
                 height: imageSize,
-                child: buildImage(article.imageUrl, fit: BoxFit.cover),
+                child: AppNetworkImage(url: article.imageUrl, fit: BoxFit.cover),
               ),
             ),
             const SizedBox(width: 12),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../models/product_item.dart';
 import '../../theme/app_colors.dart';
+import 'app_network_image.dart';
 
 class ProductCard extends StatelessWidget {
   final ProductItem product;
@@ -44,7 +45,7 @@ class ProductCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                     child: ColoredBox(
                       color: AppColors.imageBg,
-                      child: buildImage(p.imageUrl, fit: BoxFit.cover),
+                      child: AppNetworkImage(url: p.imageUrl, fit: BoxFit.cover),
                     ),
                   ),
                 ),
